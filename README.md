@@ -54,9 +54,19 @@ The system analyzes daily trading data from the CPALL stock, building a model th
 
 The main analysis and model implementation can be found in `report.ipynb`, which contains the complete workflow from data preparation to anomaly visualization.
 
-## Reference
-- https://www.researchgate.net/publication/382496033_Anomaly_Detection_in_Stock_Market_Transactions_A_Comparison_of_Deep_Learning_Methods
-- Generative Deep Learning O'REILLY
+### Data Loading Note
+
+For reproducibility, it's recommended to use the processed daily data from saved CSV files rather than reprocessing raw data:
+
+```python
+tm_daily = pd.read_csv(local_data_dir / f"{symbol}_daily.csv", index_col=0, parse_dates=True)
+print(f"Loaded {len(tm_daily):,} records for {symbol} daily data")
+```
+
+## References
+
+- *Anomaly Detection in Stock Market Transactions: A Comparison of Deep Learning Methods* (2023). Research Gate. https://www.researchgate.net/publication/382496033_Anomaly_Detection_in_Stock_Market_Transactions_A_Comparison_of_Deep_Learning_Methods
+- Foster, D. (2019). *Generative Deep Learning*. O'Reilly Media.
 
 ## Requirements
 

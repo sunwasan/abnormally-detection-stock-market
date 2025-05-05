@@ -56,7 +56,7 @@ The main analysis and model implementation can be found in `report.ipynb`, which
 
 ### Data Loading Note
 
-For reproducibility, it's recommended to use the processed daily data from saved CSV files rather than reprocessing raw data:
+For reproducibility, Use the processed daily data from saved CSV files:
 
 ```python
 tm_daily = pd.read_csv(local_data_dir / f"{symbol}_daily.csv", index_col=0, parse_dates=True)
